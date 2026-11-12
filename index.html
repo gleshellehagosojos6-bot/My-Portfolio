@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Portfolio</title>
+    <meta name="description" content="A modern dark portfolio template inspired by the Northern Lights with comprehensive sections and smooth animations">
+    <meta property="og:title" content="Aurora Portfolio Template">
+    <meta property="og:description" content="A Northern Lights inspired portfolio template with dark mode aesthetic">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Tailwind Config -->
+    <script src="tailwind-config.js"></script>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Smooth scrolling for the "View My Work" button and nav links -->
+    <style>
+        html { scroll-behavior: smooth; }
+        section[id] { scroll-margin-top: 80px; } /* keeps headings clear of the fixed navbar */
+    </style>
+</head>
+<body class="bg-dark-bg text-gray-200 aurora-bg">
+    <!-- Aurora overlay effect -->
+    <div class="aurora-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-dark-bg/90 backdrop-blur-md border-b border-dark-border z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text">My Portfolio</div>
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#home" class="hover:text-aurora-green transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-aurora-green transition">About</a></li>
+                    <li><a href="#skills" class="hover:text-aurora-green transition">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-aurora-green transition">Projects</a></li>
+                    <li><a href="#certificates" class="hover:text-aurora-green transition">Certificates</a></li>
+                    <li><a href="#internship" class="hover:text-aurora-green transition">Internship</a></li>
+                    <li><a href="#contact" class="hover:text-aurora-green transition">Contact</a></li>
+                </ul>
+                <!-- Mobile menu button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
+                <a href="#home" class="block py-2 hover:text-aurora-green">Home</a>
+                <a href="#about" class="block py-2 hover:text-aurora-green">About</a>
+                <a href="#skills" class="block py-2 hover:text-aurora-green">Skills</a>
+                <a href="#projects" class="block py-2 hover:text-aurora-green">Projects</a>
+                <a href="#certificates" class="block py-2 hover:text-aurora-green">Certificates</a>
+                <a href="#internship" class="block py-2 hover:text-aurora-green">Internship</a>
+                <a href="#contact" class="block py-2 hover:text-aurora-green">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative">
+        <div class="container mx-auto px-6 text-center z-10">
+            <div class="animate-slide-up">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                    Hello, I'm <span class="gradient-text">Gleshelle Mae</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-400 mb-8">A Computer Science</p>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-12">
+                   " Who loves learning how to build websites and apps. I'm always exploring new technologies and turning ideas into projects."
+
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <!-- FIXED: was href="#portfolio"; your section id is "projects" -->
+                    <a href="#projects" class="px-8 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue rounded-full text-dark-bg font-semibold hover:shadow-lg hover:shadow-aurora-green/50 transition transform hover:scale-105">
+                        View My Work
+                    </a>
+                </div>
+                <div class="mt-12 flex justify-center space-x-6">
+                    <a href="https://github.com/gleshellehagosojos6-bot" target="_blank" rel="noopener" class="text-2xl hover:text-aurora-green transition" aria-label="GitHub">
+                     <i class="fab fa-github"></i>
+                                                </a>
+                   <a href="tel:+639XXXXXXXXX" class="text-2xl hover:text-aurora-blue transition" aria-label="Call me"><i class="fas fa-phone"></i></a>
+                    <a href="https://www.facebook.com/YOUR.PROFILE" target="_blank" rel="noopener" class="text-2xl hover:text-aurora-purple transition" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gleshellehagosojos6@gmail.com" target="_blank" rel="noopener" class="text-2xl hover:text-aurora-pink transition" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div><!-- /animate-slide-up -->
+        </div><!-- /container -->
+        <!-- Animated particles -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute w-2 h-2 bg-aurora-green rounded-full animate-float" style="top: 20%; left: 10%;"></div>
+            <div class="absolute w-2 h-2 bg-aurora-blue rounded-full animate-float" style="top: 60%; left: 80%; animation-delay: 1s;"></div>
+            <div class="absolute w-2 h-2 bg-aurora-purple rounded-full animate-float" style="top: 40%; left: 60%; animation-delay: 2s;"></div>
+            <div class="absolute w-2 h-2 bg-aurora-pink rounded-full animate-float" style="top: 80%; left: 30%; animation-delay: 3s;"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">About Me</h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+            <!-- LEFT COLUMN: text -->
+            <div class="space-y-6">
+                <p class="text-gray-400 leading-relaxed">
+                    I'm a Computer Science student who enjoys building websites and apps. I love learning new technologies and turning ideas into real, working projects.
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    My journey started with curiosity about how the apps I use every day are made. Today, I'm practicing front-end and back-end development, building projects, and looking for opportunities to grow as a developer through internships and collaborations.
+                </p>
+            </div>
+
+            <!-- RIGHT COLUMN: photo -->
+            <div class="relative">
+                <div class="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-aurora-green via-aurora-blue to-aurora-purple p-1">
+                    <div class="w-full h-full rounded-full bg-dark-bg overflow-hidden">
+                        <img
+                            id="profile-img"
+                            src="picture.jpg"
+                            data-photo="picture.jpg"
+                            data-avatar="avatar.png"
+                            alt="picture"
+                            tabindex="0"
+                            role="button"
+                            aria-label="Click to switch between photo and avatar"
+                            class="w-full h-full object-cover cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+                        >
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /grid -->
+    </div><!-- /container -->
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Technical Skills</h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Frontend Skills -->
+               <div class="space-y-4">
+    <div>
+        <div class="flex justify-between mb-2">
+            <span>HTML</span>
+            <span>90%</span>
+        </div>
+        <div class="w-full bg-dark-card rounded-full h-2">
+            <div class="bg-gradient-to-r from-aurora-green to-aurora-blue h-2 rounded-full progress-bar" style="width: 90%"></div>
+        </div>
+    </div>
+    <div>
+        <div class="flex justify-between mb-2">
+            <span>CSS</span>
+            <span>85%</span>
+        </div>
+        <div class="w-full bg-dark-card rounded-full h-2">
+            <div class="bg-gradient-to-r from-aurora-blue to-aurora-purple h-2 rounded-full progress-bar" style="width: 85%"></div>
+        </div>
+    </div>
+    <div>
+        <div class="flex justify-between mb-2">
+            <span>JavaScript</span>
+            <span>65%</span>
+        </div>
+        <div class="w-full bg-dark-card rounded-full h-2">
+            <div class="bg-gradient-to-r from-aurora-purple to-aurora-pink h-2 rounded-full progress-bar" style="width: 75%"></div>
+        </div>
+    </div>
+</div>
+
+                <!-- Backend Skills -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-aurora-blue">Backend Development</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Node.js / Express</span>
+                                <span>50%</span>
+                            </div>
+                            <div class="w-full bg-dark-card rounded-full h-2">
+                                <div class="bg-gradient-to-r from-aurora-green to-aurora-blue h-2 rounded-full progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>MongoDB</span>
+                                <span>55%</span>
+                            </div>
+                            <div class="w-full bg-dark-card rounded-full h-2">
+                                <div class="bg-gradient-to-r from-aurora-blue to-aurora-purple h-2 rounded-full progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>MySQL</span>
+                                <span>45%</span>
+                            </div>
+                            <div class="w-full bg-dark-card rounded-full h-2">
+                                <div class="bg-gradient-to-r from-aurora-pink to-aurora-purple h-2 rounded-full progress-bar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /Backend -->
+
+                <!-- Tools -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-aurora-purple">Tools &amp; DevOps</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fab fa-git-alt text-3xl text-aurora-green mb-2"></i>
+                            <div>Git</div>
+                        </div>
+
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fab fa-github text-3xl text-aurora-blue mb-2"></i>
+                            <div>GitHub</div>
+                        </div>
+
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fas fa-code text-3xl text-aurora-purple mb-2"></i>
+                            <div>VS Code</div>
+                        </div>
+
+                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                            <i class="fas fa-paper-plane text-3xl text-aurora-pink mb-2"></i>
+                            <div>Postman</div>
+                        </div>
+
+                    </div>
+                </div><!-- /Tools -->
+            </div><!-- /max-w-4xl -->
+
+            <!-- Services Section -->
+            <div class="max-w-6xl mx-auto mt-16 grid md:grid-cols-3 gap-8">
+
+                <!-- Web Developer -->
+                <div class="bg-dark-card p-8 rounded-lg text-center card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-aurora-green to-aurora-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-laptop-code text-2xl text-dark-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Web Developer</h3>
+                    <p class="text-gray-400">
+                        Building responsive, functional websites and web applications using HTML, CSS, JavaScript, and modern tools.
+                    </p>
+                </div>
+
+                <!-- UI/UX -->
+                <div class="bg-dark-card p-8 rounded-lg text-center card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-aurora-blue to-aurora-purple rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-palette text-2xl text-dark-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">UI/UX Design</h3>
+                    <p class="text-gray-400">
+                        Designing clean, user-friendly interfaces that make websites easy and enjoyable to use.
+                    </p>
+                </div>
+
+                <!-- Frontend Developer -->
+                <div class="bg-dark-card p-8 rounded-lg text-center card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-aurora-purple to-aurora-pink rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-code text-2xl text-dark-bg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Frontend Developer</h3>
+                    <p class="text-gray-400">
+                        Turning designs into interactive, polished pages that look great on any screen size.
+                    </p>
+                </div>
+
+            </div><!-- /services -->
+        </div><!-- /container -->
+    </section>
+
+    <!-- Project Section-->
+    <section id="projects" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+
+        <h2 class="text-4xl font-bold text-center mb-10 bg-gradient-to-r from-aurora-green via-aurora-blue to-aurora-purple bg-clip-text text-transparent">
+            Projects
+        </h2>
+
+        <!-- Panel removed. No items-start, so both cards match in height -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+            <!-- Grade Monitoring System -->
+            <div class="flex flex-col bg-dark-card rounded-xl p-5 border border-transparent transition duration-300 hover:border-aurora-green hover:shadow-[0_0_20px_rgba(0,255,170,0.25)] hover:-translate-y-1">
+                <div class="w-20 h-14 rounded-lg bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center mb-4">
+                    <i class="fas fa-graduation-cap text-2xl text-dark-bg"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-aurora-green mb-1">Grade Monitoring System</h3>
+                <p class="text-gray-400 text-sm mb-3">Gradebook web app that syncs with Google Sheets.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 text-xs rounded bg-aurora-green/20 text-aurora-green">JavaScript</span>
+                    <span class="px-2 py-1 text-xs rounded bg-aurora-blue/20 text-aurora-blue">Google Sheets API</span>
+                    <span class="px-2 py-1 text-xs rounded bg-aurora-purple/20 text-aurora-purple">Vercel</span>
+                </div>
+                <a href="https://gms-frontend-liard.vercel.app" target="_blank" rel="noopener"
+                   class="mt-auto inline-flex items-center gap-2 text-sm text-aurora-green hover:underline">
+                    View <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+            <!-- Digital Art & NFT Marketplace -->
+            <div class="flex flex-col bg-dark-card rounded-xl p-5 border border-transparent transition duration-300 hover:border-aurora-blue hover:shadow-[0_0_20px_rgba(0,170,255,0.25)] hover:-translate-y-1">
+                <div class="w-20 h-14 rounded-lg bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center mb-4">
+                    <i class="fas fa-palette text-2xl text-dark-bg"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-aurora-blue mb-1">Digital Art &amp; NFT Marketplace</h3>
+                <p class="text-gray-400 text-sm mb-3">Multi-page website for showcasing digital art.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 text-xs rounded bg-aurora-green/20 text-aurora-green">HTML</span>
+                    <span class="px-2 py-1 text-xs rounded bg-aurora-blue/20 text-aurora-blue">CSS</span>
+                    <span class="px-2 py-1 text-xs rounded bg-aurora-purple/20 text-aurora-purple">Vercel</span>
+                </div>
+                <a href="https://digital-art-pied.vercel.app/" target="_blank" rel="noopener"
+                   class="mt-auto inline-flex items-center gap-2 text-sm text-aurora-blue hover:underline">
+                    View <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+            <!-- SulitSpot (same style as the other project cards) -->
+            <div class="flex flex-col bg-dark-card rounded-xl p-5 border border-transparent transition duration-300 hover:border-aurora-green hover:shadow-[0_0_20px_rgba(0,255,170,0.25)] hover:-translate-y-1">
+                <div class="w-20 h-14 rounded-lg bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center mb-4">
+                    <img src="sulitspot.jpg" alt="SulitSpot Logo" class="h-10 w-10 rounded-md object-cover">
+                </div>
+                <h3 class="text-lg font-semibold text-aurora-green mb-1">SulitSpot</h3>
+                <p class="text-gray-400 text-sm mb-3">Mobile app for sharing budget finds near you.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 text-xs rounded bg-aurora-green/20 text-aurora-green">Mobile App</span>
+                    <span class="px-2 py-1 text-xs rounded bg-aurora-blue/20 text-aurora-blue">UI/UX</span>
+                    <span class="px-2 py-1 text-xs rounded bg-aurora-purple/20 text-aurora-purple">Offline Cache</span>
+                </div>
+                <button id="ssOpen" type="button"
+                        class="mt-auto self-start inline-flex items-center gap-2 text-sm text-aurora-green hover:underline">
+                    View <i class="fas fa-external-link-alt"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+        <style>
+  /* ===== POPUP ===== */
+  .ss-modal { position:fixed; inset:0; z-index:50; display:none; align-items:center; justify-content:center;
+              padding:20px; background:rgba(3,8,25,.86); }
+  .ss-modal.open { display:flex; }
+  .ss-box { position:relative; width:100%; max-width:1080px; max-height:92vh; overflow:auto;
+            background:#12172a; border-radius:20px; padding:28px 24px 24px; color:#e6ebf5; }
+  .ss-box h4 { margin:0 44px 18px 0; font-size:1.4rem; color:#4fcba3; }
+  .ss-close { position:absolute; top:14px; right:14px; width:36px; height:36px; border-radius:50%;
+              border:0; cursor:pointer; background:rgba(255,255,255,.1); color:#fff; font-size:20px; }
+  .ss-gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .ss-gallery figure { margin:0; text-align:center; }
+  .ss-shot { position:relative; aspect-ratio:9/19.5; border-radius:18px; overflow:hidden;
+             background:#1a1f2b; border:1px solid rgba(255,255,255,.1); }
+  .ss-shot::before { content:attr(data-label); position:absolute; inset:0; display:grid;
+                     place-items:center; color:#9aa4b8; font-size:.85rem; padding:10px; }
+  .ss-shot img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; cursor:zoom-in; }
+  .ss-gallery figcaption { margin-top:10px; font-size:.9rem; color:#9aa4b8; }
+  @media (max-width:860px) {
+    .ss-gallery { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; }
+    .ss-gallery figure { flex:0 0 62%; scroll-snap-align:center; }
+  }
+  .ss-zoom { position:fixed; inset:0; z-index:60; display:none; align-items:center; justify-content:center;
+             background:rgba(0,0,0,.9); padding:16px; cursor:zoom-out; }
+  .ss-zoom.open { display:flex; }
+  .ss-zoom img { max-height:94vh; max-width:100%; border-radius:14px; }
+</style>
+
+<!-- ===== POPUP WITH THE 4 PICTURES ===== -->
+
+<div class="ss-modal" id="ssModal">
+  <div class="ss-box">
+    <button class="ss-close" id="ssClose" aria-label="Close">&times;</button>
+    <h4>SulitSpot</h4>
+    <div class="ss-gallery" id="ssGallery">
+      <figure>
+        <div class="ss-shot" data-label="Add images/sulitspot-home.png">
+          <img src="home.jpg" alt="Home feed" onerror="this.remove()">
+        </div>
+        <figcaption>Home feed</figcaption>
+      </figure>
+      <figure>
+        <div class="ss-shot" data-label="Add images/sulitspot-myposts.png">
+          <img src="mypost.jpg" alt="My Posts" onerror="this.remove()">
+        </div>
+        <figcaption>My Posts</figcaption>
+      </figure>
+      <figure>
+        <div class="ss-shot" data-label="Add images/sulitspot-profile.png">
+          <img src="profile.jpg" alt="Profile" onerror="this.remove()">
+        </div>
+        <figcaption>Profile</figcaption>
+      </figure>
+      <figure>
+        <div class="ss-shot" data-label="Add images/sulitspot-newpost.png">
+          <img src="newpost.jpg" alt="New Post" onerror="this.remove()">
+        </div>
+        <figcaption>New Post</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<div class="ss-zoom" id="ssZoom"><img alt=""></div>
+
+<script>
+  (function () {
+    var modal = document.getElementById("ssModal");
+    var zoom = document.getElementById("ssZoom");
+    var zoomImg = zoom.querySelector("img");
+
+    document.getElementById("ssOpen").onclick = function () { modal.classList.add("open"); };
+    document.getElementById("ssClose").onclick = function () { modal.classList.remove("open"); };
+    modal.onclick = function (e) { if (e.target === modal) modal.classList.remove("open"); };
+
+    document.getElementById("ssGallery").onclick = function (e) {
+      if (e.target.tagName === "IMG") { zoomImg.src = e.target.src; zoom.classList.add("open"); }
+    };
+    zoom.onclick = function () { zoom.classList.remove("open"); };
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      if (zoom.classList.contains("open")) zoom.classList.remove("open");
+      else modal.classList.remove("open");
+    });
+  })();
+</script>
+
+           <!-- Certificates Section -->
+<section id="certificates" class="py-20 bg-dark-card/30">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Certificates</h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+
+            <!-- HTML -->
+            <div class="bg-dark-card p-6 rounded-lg card-hover">
+                <a href="html.jpg" target="_blank">
+                    <img src="html.jpg" alt="Introduction to HTML certificate" class="rounded-lg mb-4 w-full">
+                </a>
+                <h3 class="font-semibold text-aurora-green">Introduction to HTML</h3>
+                <p class="text-sm text-gray-400 mb-3">Sololearn</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500"><i class="far fa-calendar mr-1"></i> April 2025</span>
+                    <a href="html.jpg" target="_blank" class="text-sm text-aurora-green hover:underline">View <i class="fas fa-arrow-up-right-from-square ml-1"></i></a>
+                </div>
+            </div>
+
+            <!-- CSS -->
+            <div class="bg-dark-card p-6 rounded-lg card-hover">
+                <a href="css.jpg" target="_blank">
+                    <img src="css.jpg" alt="Introduction to CSS certificate" class="rounded-lg mb-4 w-full">
+                </a>
+                <h3 class="font-semibold text-aurora-blue">Introduction to CSS</h3>
+                <p class="text-sm text-gray-400 mb-3">Sololearn</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500"><i class="far fa-calendar mr-1"></i> May 2025</span>
+                    <a href="css.jpg" target="_blank" class="text-sm text-aurora-blue hover:underline">View <i class="fas fa-arrow-up-right-from-square ml-1"></i></a>
+                </div>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="bg-dark-card p-6 rounded-lg card-hover">
+                <a href="javascript.jpg" target="_blank">
+                    <img src="javascript.jpg" alt="Introduction to JavaScript certificate" class="rounded-lg mb-4 w-full">
+                </a>
+                <h3 class="font-semibold text-aurora-purple">Introduction to JavaScript</h3>
+                <p class="text-sm text-gray-400 mb-3">Sololearn</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500"><i class="far fa-calendar mr-1"></i> September 2025</span>
+                    <a href="javascript.jpg" target="_blank" class="text-sm text-aurora-purple hover:underline">View <i class="fas fa-arrow-up-right-from-square ml-1"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+            <!-- Internship -->
+<section id="internship" class="py-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Internship</h2>
+        <!-- Photo cards (no PDF links) -->
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+
+            <article class="bg-dark-card rounded-lg overflow-hidden card-hover">
+                <img src="picture2.jpg"
+                     alt="OJT interns celebrating completion at SPDRRMO"
+                     class="h-48 w-full object-cover">
+                <div class="p-6">
+                    <div class="text-sm text-gray-400 mb-2">July 31, 2026</div>
+                    <h3 class="text-xl font-semibold mb-3">Completing My OJT at SPDRRMO</h3>
+                    <p class="text-gray-400">
+                        186 hours of on-the-job training at the Sorsogon Provincial Disaster Risk Reduction and Management Office.
+                    </p>
+                </div>
+            </article>
+
+            <article class="bg-dark-card rounded-lg overflow-hidden card-hover">
+                <img src="picture1.jpg"
+                     alt="Framed certificates of completion"
+                     class="h-48 w-full object-cover">
+                <div class="p-6">
+                    <div class="text-sm text-gray-400 mb-2">July 31, 2026</div>
+                    <h3 class="text-xl font-semibold mb-3">Certificates of Completion</h3>
+                    <p class="text-gray-400">
+                        Receiving our framed certificates after finishing the training program.
+                    </p>
+                </div>
+            </article>
+
+            <article class="bg-dark-card rounded-lg overflow-hidden card-hover">
+                <img src="picture3.jpg"
+                     alt="Interns taking a selfie with the certificate"
+                     class="h-48 w-full object-cover">
+                <div class="p-6">
+                    <div class="text-sm text-gray-400 mb-2">July 31, 2026</div>
+                    <h3 class="text-xl font-semibold mb-3">Memories from the Training</h3>
+                    <p class="text-gray-400">
+                        Lessons in weather monitoring, records management, and teamwork I will always value.
+                    </p>
+                </div>
+            </article>
+        </div>
+             <!-- Certificate card -->
+        <div class="max-w-6xl mx-auto mt-12">
+            <div class="bg-dark-card rounded-lg overflow-hidden card-hover md:flex">
+                <img src="certificate of  completion.jpg"
+                     alt="Certificate of Completion for 186 hours of On-the-Job Training at SPDRRMO"
+                     class="w-full md:w-1/2 object-contain bg-black">
+                <div class="p-8 flex flex-col justify-center">
+                    <div class="text-sm text-gray-400 mb-2">July 31, 2026</div>
+                    <h3 class="text-2xl font-semibold mb-3">My Certificate of Completion</h3>
+                    <p class="text-gray-400 mb-6">
+                        Awarded by the Sorsogon Provincial Disaster Risk Reduction and Management Office
+                        for satisfactorily completing 186 hours of On-the-Job Training
+                        from June 29 to July 31, 2026.
+                    </p>
+                    <a href="certificate of  completion.jpg" target="_blank"
+                       class="self-start px-6 py-3 rounded-lg border border-aurora-green text-aurora-green hover:bg-aurora-green hover:text-black transition">
+                        View Full Size →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--  PDF card -->
+        <div class="max-w-6xl mx-auto mt-12">
+            <div class="bg-dark-card rounded-lg p-8 card-hover flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div>
+                    <div class="text-sm text-gray-400 mb-2">July 31, 2026</div>
+                    <h3 class="text-xl font-semibold mb-2">OJT Narrative Report</h3>
+                    <p class="text-gray-400">
+                        My complete narrative report on the on-the-job training at SPDRRMO.
+                    </p>
+                </div>
+                <a href="narrative report.pdf" target="_blank"
+                   class="shrink-0 px-6 py-3 rounded-lg border border-aurora-green text-aurora-green hover:bg-aurora-green hover:text-black transition text-center">
+                    Open PDF →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark-card/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Contact</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
+                                <i class="fas fa-envelope text-dark-bg"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Email</p>
+                                <p>gleshellemarmol@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
+                                <i class="fas fa-phone text-dark-bg"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Phone</p>
+                                <p>+639 9385 8527</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-dark-bg"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Location</p>
+                                <p>Castilla,Sorsogon</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-lg focus:outline-none focus:border-aurora-green">
+                        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-lg focus:outline-none focus:border-aurora-green">
+                        <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-lg focus:outline-none focus:border-aurora-green"></textarea>
+                        <button type="submit" class="w-full px-8 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue rounded-lg text-dark-bg font-semibold hover:shadow-lg hover:shadow-aurora-green/50 transition transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-dark-border">
+       <div class="mt-12 flex justify-center space-x-6">
+            <div class="mb-4">
+               <a href="https://github.com/gleshellehagosojos6-bot" target="_blank" rel="noopener" class="text-2xl hover:text-aurora-green transition" aria-label="GitHub">
+                     <i class="fab fa-github"></i>
+                                                </a>
+                   <a href="tel:+639XXXXXXXXX" class="text-2xl hover:text-aurora-blue transition" aria-label="Call me"><i class="fas fa-phone"></i></a>
+                    <a href="https://www.facebook.com/YOUR.PROFILE" target="_blank" rel="noopener" class="text-2xl hover:text-aurora-purple transition" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gleshellehagosojos6@gmail.com" target="_blank" rel="noopener" class="text-2xl hover:text-aurora-pink transition" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+       </div>
+    </footer>
+
+    <script>
+        // FIXED: this was a "..." placeholder, so the mobile menu button did nothing
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+
+    <script>
+    const profileImg = document.getElementById('profile-img');
+
+    function toggleProfile() {
+        const showingPhoto = profileImg.getAttribute('src') === profileImg.dataset.photo;
+        profileImg.setAttribute(
+            'src',
+            showingPhoto ? profileImg.dataset.avatar : profileImg.dataset.photo
+        );
+    }
+
+    profileImg.addEventListener('click', toggleProfile);
+
+    profileImg.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleProfile();
+        }
+    });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
